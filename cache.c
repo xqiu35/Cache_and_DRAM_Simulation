@@ -187,9 +187,6 @@ void    cache_install(Cache *c, Addr lineaddr, uns mark_dirty)
   c->sets[Set_Index].line[Replace_LineAddr].last_access_time = cycle_count;
 
 
-
-  // Your Code Goes Here
-  // Note: You can use cycle_count as timestamp for LRU
 }
 
 
