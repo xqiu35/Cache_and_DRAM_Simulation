@@ -1,2 +1,7 @@
 # Cache_and_DRAM_Simulation
-Xiaofei's cache simulator with Write-Back Write-Allocate policy and LRU eviction.
+
+Cache simulator with Write-Back Write-Allocate policy and LRU eviction.
+
+Cache implementation is in cache.c, DRAM is in dram.c
+
+The cache and dram implementation code belongs to Xiaofei, computer engineering student, Georgia Institute of Technology
