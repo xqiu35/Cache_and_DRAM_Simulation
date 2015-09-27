@@ -121,9 +121,7 @@ uns64   dram_access_extra_credit(DRAM *dram,Addr lineaddr, Flag is_dram_write){
     Time for streaming out a 64 byte line on the bus: 10 cycles*/
 
     // Assume a mapping with consecutive lines in the same row
-    // Assume a mapping with consecutive rowbufs in consecutive rows
-    // You need to write this fuction to track open rows 
-    // You will need to compute delay based on row hit/miss/empty
+    // Assume a mapping with consecutive rowbufs in consecutive rows*/
 
   
   return delay;
