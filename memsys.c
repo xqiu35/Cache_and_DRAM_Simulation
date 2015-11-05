@@ -214,7 +214,6 @@ uns64 memsys_access_modeBC(Memsys *sys, Addr lineaddr, Access_Type type){
 
     if(outcome==MISS)
     {
-      //If miss, Allocate a space and mark the dirty bit,
       cache_install(sys->dcache, lineaddr, mark_dirty);
  
       // Check last_evicted_line. if it is valid and dirty, write to Upper level MEM
@@ -255,7 +254,6 @@ uns64   memsys_L2_access(Memsys *sys, Addr lineaddr, Flag is_writeback){
 
     if(outcome==MISS)
     {
-      // If miss, allocate L2 space, and mark the dirty bit to 0
       cache_install(sys->l2cache, lineaddr, 0);
       
       if(sys->l2cache->last_evicted_line.valid)
@@ -282,10 +280,9 @@ uns64   memsys_L2_access(Memsys *sys, Addr lineaddr, Flag is_writeback){
 
     if(outcome==MISS)
     {
-      //If miss, allocate line and mark the dirty bit to 1.
+
       cache_install(sys->l2cache, lineaddr, 1);
 
-      // then  Check last_evicted_line valid, and dirty. if it is valid and dirty, write to Upper level MEM
       if(sys->l2cache->last_evicted_line.valid)
       {
         if(sys->l2cache->last_evicted_line.dirty)
@@ -297,7 +294,6 @@ uns64   memsys_L2_access(Memsys *sys, Addr lineaddr, Flag is_writeback){
         }
       }
 
-      // then  Read from Dram.
       delay = delay + dram_access(sys->dram, lineaddr, 0);
       
     }
